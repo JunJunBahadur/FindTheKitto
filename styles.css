@@ -1,4 +1,15 @@
 *{
     margin: 0;
     padding: 0;
- }
+}
+
+#axis {
+    position: relative;
+}
+#cat {
+    width: 100px;
+    height: 140px;
+}
+#cat:hover {
+    cursor: pointer;
+}
