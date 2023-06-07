@@ -2,7 +2,11 @@ let catX, catY = 0;
 let distance = 1200;
 let won = false;
 let intervalId;
-localStorage.setItem("score", 0);
+setScore();
+const itemSet = (localStorage.getItem('score') !== null);
+if(!itemSet) {
+    localStorage.setItem("score", 0);
+}
 
 function gameEnd() {
     document.getElementById('desc').style.visibility = 'visible';
@@ -25,6 +29,7 @@ function setScore() {
 }
 
 function movement() {
+    playAudio(distance);
     window.addEventListener('mousemove', mouseCoordinates);
 }
 
@@ -63,14 +68,13 @@ function found(){
 }
 
 function mouseCoordinates(event){
-    document.getElementById('axis').innerHTML='X:'+event.clientX+' Y:'+event.clientY;
+    //document.getElementById('axis').innerHTML='X:'+event.clientX+' Y:'+event.clientY;
     
     let a = catX - event.clientX;
     let b = catY - event.clientY;
     
     distance = Math.sqrt( a*a + b*b );
     window.removeEventListener('mousemove', mouseCoordinates);
-    playAudio(distance);
     console.log(distance);
 }
 
