@@ -3,7 +3,16 @@
     padding: 0;
 }
 
-#axis {
+html, body, #main {
+    margin: 0;
+    height: 100%;
+}
+
+#score {
+    float: right;
+}
+
+#axis, #score {
     position: relative;
 }
 #cat {
