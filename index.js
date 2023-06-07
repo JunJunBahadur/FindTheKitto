@@ -10,7 +10,7 @@ if(!itemSet) {
 
 function gameEnd() {
     document.getElementById('desc').style.visibility = 'visible';
-    document.getElementById('desc').innerHTML='You found the cat!';
+    document.getElementById('desc').innerHTML='You found the ERUMA!';
     document.getElementById('play').style.visibility = 'visible';
     document.getElementById('play').innerHTML = 'Play again';
 }
@@ -36,7 +36,7 @@ function movement() {
 function generateCat() {
     document.getElementById('catImg').style.visibility = 'hidden';
     
-    document.getElementById('catImg').src='cat.jpg';
+    document.getElementById('catImg').src='eruma(1).jpeg';
     let x = Math.floor((Math.random() * screen.width) + 1);
     let y = Math.floor((Math.random() * screen.height) + 1);
     
@@ -79,18 +79,16 @@ function mouseCoordinates(event){
 }
 
 function playAudio(distance) {
-    var audio = new Audio('cat.mp3');
-    var audioFast = new Audio('cat(1).mp3');
+    var audio = new Audio('Recordingclose.mp3');
+    var audioFast = new Audio('Recording normal.mp3');
     
     if (distance<200) {
         audioFast.play();
         return;
     }
 
-    if (distance>1000) {
+    if (distance>700) {
         audio.volume = 0.1;
-    } else if (distance>700 && distance<1000){
-        audio.volume = 0.2;
     } else if (distance>400 && distance<700){
         audio.volume = 0.4;
     } else {
