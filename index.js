@@ -21,7 +21,7 @@ function gameStart() {
     document.getElementById('play').style.visibility = 'hidden';
     document.getElementById('cat').style.visibility = 'visible';
     generateCat();
-    intervalId = setInterval(movement, 400);
+    intervalId = setInterval(movement, 350);
 }
 
 function setScore() {
